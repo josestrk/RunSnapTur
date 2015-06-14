@@ -127,22 +127,10 @@ h1 {
     top: 0;
     margin-top: 6px !important;
 }
-.header{
-    color: white !important;
-    background-color:#03a9f4 !important; 
-    text-shadow:none !important;
-}
 #panel, .panel_li{
     background-color: #666 !important;
     text-shadow:none !important;
     color: white !important;
-}
-
-.buttonMap{
-    float: right;
-    font-size: 1em;
-    margin: 0.67em;
-    font-weight: bold;
 }
 
 #map{
@@ -150,7 +138,7 @@ h1 {
     margin: 0;
     padding: 0;
     position: absolute; /* posición absoluta a navegador */
-    top:144px;
+    top:96px;
     left: 0;        /* ajusta a borde de navegador */
     right: 0;
     bottom: 0;

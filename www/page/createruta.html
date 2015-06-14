@@ -1,51 +1,19 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+<div data-role="page" id="geolocation">
 
-        <title>Crear ruta</title>
-
-        <link rel="stylesheet" href="style/jquery.mobile-1.0rc1.min.css" />
-
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
-        <script type="text/javascript" src="js/jquery.mobile-1.0rc1.min.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script type="text/javascript" src="js/gmaps.js"></script>
-
-    </head>
-    <body>
-        <div data-role="page" id="geolocation">
-
-            <div data-role="header">
-                <a href="#" data-rel="back" data-icon="arrow-l">Atrás</a>
-                <h1>Crear Ruta</h1>
-            </div>
-            <div data-role="panel" id="panel" class="latlng" data-position-fixed="true" data-position="left" data-display="overlay">
-                <ul data-role="listview">
-                    <li data-icon="false"><a href="#" id="iniciar" data-icon="plus">Inicializar</a>
-                        </li>
-                    <li data-icon="false"><a href="#" id="compactar" data-icon="plus">Compactar</a></li>
-                    <li data-icon="false"><a href="#" id="salvar" data-icon="plus">Guardar</a></li>
-                </ul>
-            </div>
-            <div data-role="content" style="padding:0px;">
-                <div id="map"></div>
-            </div>
-
-
-        </div>
-
-        <script type="text/javascript" src="../js/api/createruta.js"></script>
-        <script>
-            geolocalizar();
-            $("#compactar").on('click', function(){compactar()});
-            $("#iniciar").on('click', function(){
-                localStorage.geoMap="[]"; 
-                map.removeMarkers(); 
-                map.cleanRoute();
-            });
-        </script>
-    </body>
-</html>
+    <div data-role="header">
+        <a href="#" data-rel="back" data-icon="arrow-l">Atrás</a>
+        <h1>Crear Ruta</h1>
+    </div>
+    <div data-role="navbar" data-iconpos="left" class="ui-body-a">
+        <ul>
+            <li data-icon="back"><a href="#" id="iniciar" data-icon="back">Inicializar</a>
+            </li>
+            <li data-icon="star"><a href="#" id="compactar" data-icon="star">Compactar</a></li>
+            <li data-icon="check"><a href="#" id="salvar" data-icon="check">Guardar</a></li>
+        </ul>
+    </div>
+    <div data-role="content" style="padding:0px;">
+        <div id="map"></div>
+    </div>
+<script type="text/javascript" src="../js/api/createruta.js"></script>
+</div>

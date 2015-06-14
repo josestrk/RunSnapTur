@@ -1,37 +1,20 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+<div data-role="page" id="camera">
 
-        <title>foto</title>
+    <div data-role="header">
+        <a href="#" data-rel="back" data-icon="arrow-l">Atrás</a>
+        <h1>Cámara</h1>
+    </div>
 
-        <link rel="stylesheet" href="style/jquery.mobile-1.0rc1.min.css" />
+    <div data-role="content">
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-a"><button type="button" data-theme="c" data-icon="plus">Cámara</button></div>
+            <div class="ui-block-b"><button type="button" data-theme="c" data-icon="search">Galeria</button></div>
+        </fieldset>
 
-        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery.mobile-1.0rc1.min.js"></script>
-    </head>
-    <body>
-        <div data-role="page" id="camera">
+        <div id="camera-image" class="ui-body ui-body-b" style="background-size:100%;min-height:300px"></div>
+    </div>
 
-            <div data-role="header">
-                <a href="#" data-rel="back" data-icon="arrow-l">Atrás</a>
-                <h1>Cámara</h1>
-            </div>
+    <!--            tomar la foto -->
+    <script type="text/javascript" src="../js/api/camera.js"></script>
 
-            <div data-role="content">
-                <fieldset class="ui-grid-a">
-                    <div class="ui-block-a"><button type="button" data-theme="c" data-icon="plus">Cámara</button></div>
-                    <div class="ui-block-b"><button type="button" data-theme="c" data-icon="search">Galeria</button></div>
-                </fieldset>
-
-                <div id="camera-image" class="ui-body ui-body-b" style="background-size:100%;min-height:300px"></div>
-            </div>
-            
-<!--            tomar la foto -->
-            <script type="text/javascript" src="../js/api/camera.js"></script>
-
-        </div>
-    </body>
-</html>
+</div>

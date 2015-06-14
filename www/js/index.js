@@ -1,6 +1,6 @@
 var app = {
     // Application Constructor
-    initialize: function($) {
+    initialize: function() {
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -27,5 +27,24 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+    geolocalizar: function(){
+        var map, lat, lng, rec;
+        GMaps.geolocate({
+            success: function(position){
+                lat = position.coords.latitude;  // guarda coords en lat y lng
+                lng = position.coords.longitude;
+                rec.push([lat,lng]);
+                localStorage.geoMap = JSON.stringify(rec);
+                map = new GMaps({  // muestra mapa centrado en coords [lat, lng]
+                    el: '#map',
+                    lat: lat,
+                    lng: lng,
+                });
+                map.addMarker({ lat: lat, lng: lng});
+            },
+            error: function(error) { alert('Geolocalización falla: '+error.message); },
+            not_supported: function(){ alert("Su navegador no soporta geolocalización"); },
+        });
     }
 };
