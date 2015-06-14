@@ -36,13 +36,13 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
     text-transform:uppercase;
     width:100%;
+    font-family: 'Droid Sans', 'Helvetica', Arial, sans-serif;
 }
 
 /* Portrait layout (default) */
@@ -112,4 +112,47 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+}
+
+#abre_panel{
+    position: absolute;
+    background-image: url(../img/icon.png);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 20px;
+    box-shadow: none;
+    background-color: transparent !important;
+    border: none;
+    left: -5px;
+    top: 0;
+    margin-top: 6px !important;
+}
+.header{
+    color: white !important;
+    background-color:#03a9f4 !important; 
+    text-shadow:none !important;
+}
+#panel, .panel_li{
+    background-color: #666 !important;
+    text-shadow:none !important;
+    color: white !important;
+}
+
+.buttonMap{
+    float: right;
+    font-size: 1em;
+    margin: 0.67em;
+    font-weight: bold;
+}
+
+#map{
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute; /* posición absoluta a navegador */
+    top:144px;
+    left: 0;        /* ajusta a borde de navegador */
+    right: 0;
+    bottom: 0;
+    background: rgba(0,255,0,0.5); /* verde si no hay mapa */
 }

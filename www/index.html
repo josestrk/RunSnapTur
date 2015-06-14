@@ -9,32 +9,43 @@
         
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link rel="stylesheet" type="text/css" href="css/mypath.css" />
-
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.0rc1.min.css">
         <title>RunSnapTur</title>
     </head>
     <body>
-        
-        <div class="latlng">
-          <h1>Generar ruta</h1>
-          <button id="iniciar">Inicializar</button>
-          <button id="compactar">Compactar</button>
+        <div data-role="page" id="home">
+            <div data-role="header" class="header">
+                <h1>RunSnapTur</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">PhoneGap</li>
+                    <li><a href="page/accelerometer.html">Accelerometer</a></li>
+                    <li><a href="page/camera.html">Camera</a></li>
+                    <li><a href="page/connection.html">Connection</a></li>
+                    <li><a href="page/contacts.html">Contacts</a></li>
+                    <li><a href="page/device.html">Device</a></li>
+                    <li><a href="page/notification.html">Notification</a></li>
+                    <li data-role="list-divider">HTML 5</li>
+                    <li><a href="page/geolocation.html">Geolocation</a></li>
+                    <li><a href="page/createruta.html">Crear ruta</a></li>
+                </ul>
+<!--                <div id="map"></div>-->
+            </div>
         </div>
-        <div id="map"></div>
-
+        
+<!--        Librerías -->
         <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.0rc1.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/zepto.min.js"></script>
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-        <script type="text/javascript" src="js/gmaps.js"></script>
         <script type="text/javascript">
-            geolocalizar();
-            $("#compactar").on('click', function(){compactar()});
-            $("#iniciar").on('click', function(){
-                localStorage.geoMap="[]"; 
-                map.removeMarkers(); 
-                map.cleanRoute();
+            app.initialize($);
+            $(document).ready(function(e) {	
+
+                $("div:jqmData(role='panel')").css('margin-top',  ($("div:jqmData(role='header')").height()));
+
             });
-            app.initialize();
         </script>
     </body>
 </html>
