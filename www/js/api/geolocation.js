@@ -16,6 +16,26 @@
             zoom:      15,
         });
         
+        function enlazarMarcador(e){
+            // muestra ruta entre marcas anteriores y actuales
+            map.drawRoute({
+                origin: [lat, lng],  // origen en coordenadas anteriores
+                // destino en coordenadas del click o toque actual
+                destination: [e.latLng.lat(), e.latLng.lng()],
+                travelMode: 'driving',
+                strokeColor: '#4f5',
+                strokeOpacity: 0.6,
+                strokeWeight: 5
+            });
+
+            lat = e.latLng.lat();   // guarda coords para marca siguiente
+            lng = e.latLng.lng();
+            rec = JSON.parse(localStorage.geoMap);
+            rec.push([lat, lng]);
+            map.addMarker({ lat: lat, lng: lng});  // pone marcador en mapa
+            localStorage.geoMap = JSON.stringify(rec);
+        };
+        
         if(navigator.geolocation){
             var onSuccess = function(position) {
                 var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -27,6 +47,7 @@
                     title:     'Estoy aqui'
                 });
                 map.setCenter(latlng);
+                enlazarMarcador(latlng);
             };
 
             var onFail = function() {
@@ -34,6 +55,7 @@
             };
 
             navigator.geolocation.getCurrentPosition(onSuccess, onFail);
+            
         }
     });
 
